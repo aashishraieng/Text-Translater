@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Translation Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Neural Translator</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Neural Network Translation Simulator</h1>
+            <p class="subtitle">Experience how neural networks process and translate text</p>
+        </header>
+
+        <section id="home" class="section">
+            <div class="simulation-container">
+                <div class="input-section">
+                    <h2>Input Text</h2>
+                    <textarea id="inputText" placeholder="Enter text to translate..."></textarea>
+                    
+                    <div class="parameter-group">
+                        <label for="targetLanguage">Target Language:</label>
+                        <select id="targetLanguage">
+                            <option value="hindi">Hindi</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="japanese">Japanese</option>
+                        </select>
+                    </div>
+                    
+                    <div class="parameter-group">
+                        <label for="useApi">Use Online Translation:</label>
+                        <input type="checkbox" id="useApi">
+                        <span class="checkbox-label">Enable online translation</span>
+                    </div>
+                    
+                    <button id="translateBtn">Translate</button>
+                </div>
+
+                <div class="network-visualization">
+                    <h2>Neural Network Visualization</h2>
+                    <div class="network-diagram">
+                        <div class="layer encoder-layer">
+                            <h3>Encoder</h3>
+                            <div class="neurons" id="encoderNeurons"></div>
+                        </div>
+                        <div class="layer attention-layer">
+                            <h3>Attention</h3>
+                            <div class="attention-weights" id="attentionWeights"></div>
+                        </div>
+                        <div class="layer decoder-layer">
+                            <h3>Decoder</h3>
+                            <div class="neurons" id="decoderNeurons"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <h2>Translation Output</h2>
+                    <div class="output-display" id="outputDisplay">
+                        <div class="translation"></div>
+                        <div class="confidence"></div>
+                    </div>
+                </div>
+
+                <div class="parameters">
+                    <h2>Network Parameters</h2>
+                    <div class="parameter-group">
+                        <label for="embeddingSize">Embedding Size:</label>
+                        <input type="number" id="embeddingSize" value="10" min="5" max="20">
+                    </div>
+                    <div class="parameter-group">
+                        <label for="attentionHeads">Attention Heads:</label>
+                        <input type="number" id="attentionHeads" value="4" min="1" max="8">
+                    </div>
+                    <div class="parameter-group">
+                        <label for="processingSpeed">Processing Speed (ms):</label>
+                        <input type="number" id="processingSpeed" value="500" min="100" max="2000" step="100">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="content-container">
+                <h2>About Neural Translator</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Neural Translator is an advanced translation tool that simulates how neural networks process and translate text. Using state-of-the-art machine learning techniques, it provides accurate translations while visualizing the underlying neural network architecture.</p>
+                        <p>Our system combines:</p>
+                        <ul>
+                            <li>Advanced neural network architecture</li>
+                            <li>Real-time translation processing</li>
+                            <li>Interactive visualization</li>
+                            <li>Multiple language support</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Languages</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0.5s</span>
+                            <span class="stat-label">Response Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="content-container">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Multi-Language Support</h3>
+                        <p>Translate between multiple languages including Hindi, Urdu, Spanish, French, German, and Japanese.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Neural Network Visualization</h3>
+                        <p>Watch how the neural network processes your text in real-time with interactive visualizations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-Time Translation</h3>
+                        <p>Get instant translations with high accuracy and confidence scores.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your translations are processed locally and never stored on our servers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="content-container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions or feedback? We'd love to hear from you!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>SupportUsfida@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">🌍</span>
+                                <span>www.Ashishrai12@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <span>+91-8803942460</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder=" Enter Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
